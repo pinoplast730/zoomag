@@ -1,0 +1,223 @@
+
+
+
+ <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw & Play Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <header class="site-header">
+    <div class="container header-content">
+        <div class="logo">
+            <img src="image4.png" alt="Logo" onclick="showPage('home')" style="cursor:pointer">
+        </div>
+        <nav class="nav-links">
+            <form id="searchForm" class="search-container">
+                <input type="text" placeholder="Пошук" id="searchInput">
+            </form>
+            <div class="nav-menu-items">
+                <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+                <a href="#footer">About Us</a>
+                <a href="javascript:void(0)" onclick="openContacts()">Contacts</a>
+            </div>
+        </nav>
+    </div>
+</header>
+    <!-- <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="image4.png" alt="Logo" onclick="showPage('home')" style="cursor:pointer">
+            </div>
+            <nav class="nav-links">
+            <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+            <a href="#footer">About Us</a>
+            <a href="#footer">Contacts</a>
+        </nav>
+    </div>
+</header> -->
+
+    <main id="home-page">
+        <section class="hero-section">
+            <img src="image1.png" alt="Happy Pets" class="hero-image">
+        </section>
+
+        <section class="pet-selection">
+            <div class="circles-row">
+                <button class="pet-btn" id="cat-btn" onclick="showPage('cats')">
+                    <img src="image2.png" alt="Cat">
+                </button>
+                <button class="pet-btn" id="dog-btn" onclick="showPage('dogs')">
+                    <img src="image3.png" alt="Dog">
+                </button>
+            </div>
+        </section>
+        
+
+
+
+
+        <section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">Категорії:</h2>
+        <div class="categories-grid">
+            <div class="cat-card" onclick="showCategory('Іграшки')">
+                <div class="image-wrapper"><img src="image5.png" alt="Іграшки"></div>
+                <p>Іграшки</p>
+            </div>
+            <div class="cat-card" onclick="showCategory('Нашийники')">
+                <div class="image-wrapper"><img src="image6.png" alt="Нашийники"></div>
+                <p>Нашийники</p>
+            </div>
+            <div class="cat-card" onclick="showCategory('Гігієна')">
+                <div class="image-wrapper"><img src="image13.png" alt="Гігієна"></div>
+                <p>Гігієна</p>
+            </div>
+            <div class="cat-card" onclick="showCategory('Лежанки')">
+                <div class="image-wrapper"><img src="image7.png" alt="Лежанки"></div>
+                <p>Лежанки</p>
+            </div>
+            </div>
+    </div>
+</section>
+        <!-- <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Категорії:</h2>
+                <div class="categories-grid">
+                    <div class="cat-card"><div class="image-wrapper"><img src="image5.png"></div><p>Іграшки</p></div>
+                    <div class="cat-card"><div class="image-wrapper"><img src="image6.png"></div><p>Нашийники</p></div>
+                    <div class="cat-card"><div class="image-wrapper"><img src="image13.png"></div><p>Гігієна</p></div>
+                    <div class="cat-card"><div class="image-wrapper"><img src="image7.png"></div><p>Лежанки</p></div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <main id="products-page" style="display: none;">
+        <div class="product-banner">
+            <button class="back-btn" onclick="showPage('home')">←</button>
+            <span class="category-label">Категорії</span>
+            <img id="category-hero" src="" alt="Hero">
+            <h1 id="category-title"></h1>
+        </div>
+        <div class="container">
+            <div id="product-list" class="products-grid">
+                </div>
+            <!-- <div class="pagination">
+                <span class="page-num active">1</span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="page-num">3</span>
+            </div> -->
+        </div>
+    </main>
+
+    <div id="cart-page" style="display: none;">
+    <div class="container">
+        <h1 class="cart-title">Ваші товари</h1>
+        <div id="cart-items-container">
+            </div>
+        <div class="cart-footer" style="text-align: center; margin-top: 30px;">
+            <div class="total-wrapper">
+                <p>Загальна сума до сплати: <span id="total-price">0</span> грн</p>
+            </div>
+            <br>
+            <button class="buy-btn" onclick="openCheckout()">Купити</button>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer" id="footer">
+        <div class="container footer-content">
+            <div class="social-icons">
+                <a href="#"><img src="image10.png" alt="FB"></a>
+                <a href="#"><img src="image11.png" alt="IG"></a>
+                <a href="#"><img src="image12.png" alt="TW"></a>
+            </div>
+            <div class="footer-info">
+                <a href="#">Правила купівлі домашніх улюбленців</a>
+                <a href="#">Центр підтримки</a>
+                <p>Контакти: +38 (012) 345-67-89</p>
+            </div>
+            <div class="copy-text">2025-2026. Paw & Play</div>
+        </div>
+    </footer>
+
+    <a href="javascript:void(0)" class="fixed-circle-btn" onclick="showPage('cart')">
+        <img src="image16.png" alt="Cart">
+        <span id="cart-count">0</span>
+    </a>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>Оформлення замовлення</h2>
+            <form id="order-form">
+                <label>Номер телефону:</label>
+                <input type="tel" placeholder="+380..." required>
+                
+                <label>Спосіб оплати:</label>
+                <select required>
+                    <option value="cash">При отриманні</option>
+                    <option value="card">Онлайн карта</option>
+                </select>
+
+                <label>Адреса доставки:</label>
+                <textarea placeholder="Місто, вулиця, будинок..." required></textarea>
+
+                <button type="submit" class="submit-order-btn">Підтвердити замовлення</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <div id="contact-modal" class="modal">
+    <div class="contact-modal-content">
+        <span class="close-btn" onclick="closeContacts()">&times;</span>
+        
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2>Контакти</h2>
+                
+                <form onsubmit="sendContactForm(event)">
+                    <div class="form-group">
+                        <label>Ім'я:</label>
+                        <input type="text" placeholder="Введіть ім'я:" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ел.пошта:</label>
+                        <input type="email" placeholder="Введіть ел. пошту:" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Номер телефону:</label>
+                        <input type="tel" placeholder="+380..." required>
+                    </div>
+
+                    <button type="submit" class="send-msg-btn">Надіслати</button>
+                </form>
+            </div>
+
+            <div class="contact-right">
+                <div class="map-overlay">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
